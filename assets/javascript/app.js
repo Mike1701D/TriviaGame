@@ -3,6 +3,11 @@ $(document).ready(function() {
     var number = 46;
     var noMultiClick = 0;
 
+    $("#radioButtons1").hide();
+    $("#radioButtons2").hide();
+    $("#radioButtons3").hide();
+    $("#radioButtons4").hide();
+
     //  Variable that will hold our interval ID when we execute
     //  the "run" function
     var intervalId;
@@ -10,6 +15,7 @@ $(document).ready(function() {
     //  COUNTDOWN FUNCTION
     function run() {
       intervalId = setInterval(decrement, 1000);
+      $("button").remove();
     }
 
     //  The decrement function.
@@ -22,30 +28,21 @@ $(document).ready(function() {
       $("#show-number").html("Time Remaining:  " + number + " seconds");
 
       // TRIVIA FUNCTION
-      $("#newTrivia1").html("Question 1:  Which of the following is one of Holmes' hobbies?");
-      // Astronomy
-      // Bee keeping
-      // Space tourism
+      $(function() {
+        $("#radio").buttonset();
+      });
+      
+      $("#newTrivia1").html("Question 1:  What is the name of the children who assist Sherlock Holmes?");
+      $("#radioButtons1").show();
 
-      $("#newTrivia2").html("Question 2:  What is the name of the youth who assist Sherlock Holmes?");
-      // The Baker Street Irregulars
-      // The Unseen Youth
-      // The Hidden Ones
+      $("#newTrivia2").html("Question 2:  The 7% solution is a reference to what?");
+      $("#radioButtons2").show();      
 
-      $("#newTrivia3").html("Question 3:  Sherlock's 7 percent solution is a reference to what?");
-      // Sherlock's use of probability to solve crimes
-      // The concentration of concaine Sherlock uses to self-medicate
-      // Sherlock's belief that 93% of people are dishonest when unsupervised
+      $("#newTrivia3").html("Question 3:  Where does Sherlock Holmes store his tobacco?");
+      $("#radioButtons3").show();      
 
-      $("#newTrivia4").html("Question 4:  Where does Sherlock Holmes store his tobacco?");
-      // In a jar
-      // In his slipper
-      // In a hollowed book
-
-      $("#newTrivia5").html("Question 5:  Who couldn't Sherlock Holmes defeat?");
-      // Irene Adler
-      // Professor Moriarty
-      // Inspector Lestrade
+      $("#newTrivia4").html("Question 4:  Whom couldn't Sherlock Holmes outwit?");
+      $("#radioButtons4").show();      
 
       //  Once number hits zero...
       if (number === 0) {
@@ -78,3 +75,11 @@ $(document).ready(function() {
 });
 
 
+// function myFunction() {
+ ///   var els = document.getElementsByName('ribbon_1');
+ //   for (var i = 0; i < els.length; i++) {
+ //       if (els[i].checked) {
+ //           document.getElementById("demo").innerHTML = els[i].value;
+ //       }
+ //   }
+//}
