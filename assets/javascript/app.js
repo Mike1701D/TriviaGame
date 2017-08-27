@@ -25,13 +25,11 @@ $(document).ready(function() {
       number--;
 
       //  Show the number in the #show-number tag.
-      $("#show-number").html("Time Remaining:  " + number + " seconds");
+      if (number >-1) {
+      	$("#show-number").html("Time Remaining:  " + number + " seconds");
+      }
 
-      // TRIVIA FUNCTION
-      $(function() {
-        $("#radio").buttonset();
-      });
-      
+      // TRIVIA FUNCTION     
       $("#newTrivia1").html("Question 1:  What is the name of the children who assist Sherlock Holmes?");
       $("#radioButtons1").show();
 
@@ -45,13 +43,10 @@ $(document).ready(function() {
       $("#radioButtons4").show();      
 
       //  Once number hits zero...
-      if (number === 0) {
+      if (number === -1) {
 
         //  ...run the stop function.
         stop();
-
-        //  Alert the user that time is up.
-        alert("Time Up!");
       }
     }
 
@@ -61,6 +56,28 @@ $(document).ready(function() {
       //  We just pass the name of the interval
       //  to the clearInterval function.
       clearInterval(intervalId);
+      var answerOne = $('input[name=radioA]:checked').val();
+      var answerTwo = $('input[name=radioB]:checked').val();
+      var answerThree = $('input[name=radioC]:checked').val();
+      var answerFour = $('input[name=radioD]:checked').val();
+
+      var answerOne = parseInt (answerOne);
+      var answerTwo = parseInt (answerTwo);
+      var answerThree = parseInt (answerThree);
+      var answerFour = parseInt (answerFour);
+      var answerTotal = answerOne + answerTwo + answerThree + answerFour;
+
+      if (answerTotal <2) {
+      	$("#show-number").html("Time's Up!  You answered " + answerTotal + " questions correctly.  Read more Sherlock Holmes novels.  They're fantastic!");
+      }
+
+      if (answerTotal === 3) {
+      	$("#show-number").html("Time's Up!  You answered " + answerTotal + " questions correctly.  Very impressive!");
+      }
+
+      if (answerTotal === 4) {
+      	$("#show-number").html("Time's Up!  You answered " + answerTotal + " questions correctly.  Sherlock Holmes himself would be impressed!");
+      }   
     }
 
     //  LISTENS FOR CLICK ON START
