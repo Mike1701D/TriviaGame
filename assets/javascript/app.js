@@ -61,22 +61,46 @@ $(document).ready(function() {
       var answerThree = $('input[name=radioC]:checked').val();
       var answerFour = $('input[name=radioD]:checked').val();
 
+      if (answerOne === undefined) {
+      	answerOne = 0;
+      }
+
+      if (answerTwo === undefined) {
+      	answerTwo = 0;
+      }
+
+      if (answerThree === undefined) {
+      	answerThree = 0;
+      }
+
+      if (answerFour === undefined) {
+      	answerFour = 0;
+      }
+
       var answerOne = parseInt (answerOne);
       var answerTwo = parseInt (answerTwo);
       var answerThree = parseInt (answerThree);
       var answerFour = parseInt (answerFour);
       var answerTotal = answerOne + answerTwo + answerThree + answerFour;
 
-      if (answerTotal <2) {
-      	$("#show-number").html("Time's Up!  You answered " + answerTotal + " questions correctly.  Read more Sherlock Holmes novels.  They're fantastic!");
+      if (answerTotal === 0) {
+      	$("#show-number").html("Time's Up!  Too bad.  You didn't answer any questions correctly.");
+      }
+
+      if (answerTotal === 1) {
+      	$("#show-number").html("Time's Up!  You answered one question correctly.  Read more Sherlock Holmes novels.  They're fantastic!");
+      }
+
+      if (answerTotal === 2) {
+      	$("#show-number").html("Time's Up!  You answered two questions correctly.  Read more Sherlock Holmes novels.  They're fantastic!");
       }
 
       if (answerTotal === 3) {
-      	$("#show-number").html("Time's Up!  You answered " + answerTotal + " questions correctly.  Very impressive!");
+      	$("#show-number").html("Time's Up!  You answered three questions correctly.  Very impressive!");
       }
 
       if (answerTotal === 4) {
-      	$("#show-number").html("Time's Up!  You answered " + answerTotal + " questions correctly.  Sherlock Holmes himself would be impressed!");
+      	$("#show-number").html("Time's Up!  You answered all four questions correctly.  Sherlock Holmes himself would be impressed!");
       }   
     }
 
