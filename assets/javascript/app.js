@@ -1,7 +1,6 @@
 $(document).ready(function() {
     //  Set our number counter to 46
     var number = 46;
-    var noMultiClick = 0;
 
     $("#radioButtons1").hide();
     $("#radioButtons2").hide();
@@ -106,21 +105,7 @@ $(document).ready(function() {
 
     //  LISTENS FOR CLICK ON START
     $(document).on("click", "button", function() {
-      if (noMultiClick === 0) {
         run();
-      }
-      noMultiClick = 1;
-
     });
 
 });
-
-
-// function myFunction() {
- ///   var els = document.getElementsByName('ribbon_1');
- //   for (var i = 0; i < els.length; i++) {
- //       if (els[i].checked) {
- //           document.getElementById("demo").innerHTML = els[i].value;
- //       }
- //   }
-//}
