@@ -19,8 +19,17 @@ h1 {
   text-align: center;
 }
 
+.finish { /* Typography */
+  text-align: center;
+}
+
 .clickHere {
-  width: 100px;
+  width: 180px;
+  height: 50px;
+}
+
+.clickHereDone {
+  width: 180px;
   height: 50px;
 }
 
@@ -36,6 +45,7 @@ h1 {
   text-align:  left;
   margin-left:  20px;
   font-size:  20px;
+  text-decoration: underline;
 }
 
 #newTrivia2 {
@@ -44,6 +54,7 @@ h1 {
   text-align:  left;
   margin-left:  20px;
   font-size:  20px;
+  text-decoration: underline;
 }
 
 #newTrivia3 {
@@ -52,6 +63,7 @@ h1 {
   text-align:  left;
   margin-left:  20px;
   font-size:  20px;
+  text-decoration: underline;
 }
 
 #newTrivia4 {
@@ -60,6 +72,43 @@ h1 {
   text-align:  left;
   margin-left:  20px;
   font-size:  20px;
+  text-decoration: underline;
+}
+
+#newTrivia5 {
+  color:  white;
+  font-weight:  bold;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px;
+  text-decoration: underline;
+}
+
+#newTrivia6 {
+  color:  white;
+  font-weight:  bold;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px;
+  text-decoration: underline;
+}
+
+#newTrivia7 {
+  color:  white;
+  font-weight:  bold;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px;
+  text-decoration: underline;
+}
+
+#newTrivia8 {
+  color:  white;
+  font-weight:  bold;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px;
+  text-decoration: underline;
 }
 
 #radioButtons1 {
@@ -84,6 +133,34 @@ h1 {
 }
 
 #radioButtons4 {
+  color:  white;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px; 
+}
+
+#radioButtons5 {
+  color:  white;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px;
+}
+
+#radioButtons6 {
+  color:  white;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px; 
+}
+
+#radioButtons7 {
+  color:  white;
+  text-align:  left;
+  margin-left:  20px;
+  font-size:  20px; 
+}
+
+#radioButtons8 {
   color:  white;
   text-align:  left;
   margin-left:  20px;
