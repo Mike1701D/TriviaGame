@@ -2,6 +2,7 @@ $(document).ready(function() {
     //  Set our number counter to 121 and our double-click preventer to 121
     var number = 121;
     var noEarlyCountDown = number - 1;
+    var noStarting = 0;
 
     $("#radioButtons1").hide();
     $("#radioButtons2").hide();
@@ -182,13 +183,20 @@ $(document).ready(function() {
     //  LISTENS FOR CLICK ON START
     $(".start").on("click", "button", function() {
         if (number > noEarlyCountDown) {
-          run();
+        	noEarlyCountDown = number + 1;
+        	run();
+        	noStarting = 1;
         }
     });
 
     //  LISTENS FOR CLICK ON FINISH
     $(".finish").on("click", "button", function() {
-        stop();        
+    	if (noStarting === 0) {
+    		$("#show-number").html("Don't click DONE to start the game!");
+    	}
+    	if (noStarting === 1) {
+    		stop();
+    	}
     });
 
 
